@@ -1,22 +1,25 @@
-template
+Event producer example
 --------
-empty slim web project based on spring-boot
+Tiny example how to send events to a message broker in a lightweight way.
+Based on spring-boot and apache-camel.
+ 
 
 build
 -----
 
 mvn install
 
-deploy
-------
-
-
-docker build -t spring-boot-web:0.0.1 .
-docker run -d --name web -p 8080:8080 spring-boot-web:0.0.1
 
 test
 ----
 
-issue a request to _http://localhost:8080/check_
-it should return the string _IMOK_
+Start it via the main-method in class SimpleApplication and 
+send a json structure like:
 
+	{
+	   "id":"666",
+	   "sureName":"Kilmister"
+	}
+
+
+to http://localhost:8080
