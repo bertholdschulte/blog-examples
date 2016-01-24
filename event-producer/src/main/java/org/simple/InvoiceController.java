@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Simple rest-controller to create invoices. Send a json structure like:
+ * Simple rest-controller to create invoices. To test it send a json structure like:
  * 
  * <pre>
  * {

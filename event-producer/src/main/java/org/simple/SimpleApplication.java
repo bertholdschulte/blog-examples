@@ -25,10 +25,10 @@ public class SimpleApplication {
 	}
 
 	/**
-	 * Creates a proxy used by camel to send events to the endpoint 'seda:eventService'.
+	 * Creates a proxy used by camel to send events to the endpoint 'direct:eventService'.
 	 * Automatically called if the method fireEvent is executed on the interface {@link EventService}
 	 */
-	@Produce(uri = "seda:eventService")
+	@Produce(uri = "direct:eventService")
 	public EventService eventService;
 
 	/**
