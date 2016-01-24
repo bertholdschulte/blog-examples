@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Simple rest-controller to create invoices. To test it send a json structure like:
+ * Simple rest-controller to create purchases. To test it send a json structure like:
  * 
  * <pre>
  * {
@@ -23,43 +23,43 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RestController(value = "/")
-public class InvoiceController {
+public class PurchaseController {
 
 	@Autowired
 	EventService eventService;
 
-	@RequestMapping(value = "/invoice/", method = { RequestMethod.POST })
-	public Invoice createInvoice(@RequestBody Invoice invoice) {
+	@RequestMapping(value = "/purchase/", method = { RequestMethod.POST })
+	public Purchase createPurchase(@RequestBody Purchase purchase) {
 		/*
-		 * do what you need to do to create an invoice and then ...
+		 * do what you need to do to create a purchase
 		 */
-		InvoicePayload invoicePayload = new InvoicePayload(invoice);
+		PurchasePayload purchasePayload = new PurchasePayload(purchase);
 
 		/*
-		 * where it's needed, fire an event reflecting what has happened above
+		 *  and then, where it's needed, fire an event reflecting what has happened above
 		 */
-		eventService.fireEvent("invoiceCreated", invoicePayload);
-		return invoice;
+		eventService.fireEvent("purchaseCreated", purchasePayload);
+		return purchase;
 	}
 
 	/*
 	 * some adaption of types, enrichment with further information etc. might lead to the resulting event.
 	 */
-	public class InvoicePayload implements Serializable {
+	public class PurchasePayload implements Serializable {
 
-		private Invoice invoice;
+		private Purchase purchase;
 		private String userName;
 
-		public InvoicePayload(Invoice invoice) {
-			this.invoice = invoice;
+		public PurchasePayload(Purchase purchase) {
+			this.purchase = purchase;
 		}
 
 		public String getReferenceNumber() {
-			return invoice.getId();
+			return purchase.getId();
 		}
 
 		public String getUserName() {
-			return invoice.getSureName();
+			return purchase.getSureName();
 		}
 
 	}

@@ -3,20 +3,20 @@ package org.simple;
 import java.io.Serializable;
 
 /**
- * tiny invoice type, more attributes follow...
+ * tiny purchase type, more attributes follow...
  * 
  */
-public class Invoice implements Serializable{
+public class Purchase implements Serializable{
 
 	private static final long serialVersionUID = -3450493831191972277L;
 	private String id;
 	private String sureName;
 
-	public Invoice(){
+	public Purchase(){
 		
 	}
 
-	public Invoice(String id) {
+	public Purchase(String id) {
 		this.id = id;
 	}
 

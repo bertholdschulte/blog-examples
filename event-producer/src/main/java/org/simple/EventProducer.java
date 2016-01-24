@@ -20,7 +20,7 @@ public class EventProducer extends RouteBuilder {
 		from("direct:eventService")
 				.marshal(jsonFormat)
 				.setHeader("event-created").simple("${headers." + Exchange.CREATED_TIMESTAMP + "}")
-				.to("kafka://...");
+				.to("stub:kafka:...");//temporally stubbed for dev. purposes
 	}
 
 }
