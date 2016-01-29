@@ -4,7 +4,6 @@ import org.apache.camel.Body;
 import org.apache.camel.Header;
 import org.apache.camel.InOnly;
 import org.apache.camel.Produce;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -47,4 +46,5 @@ public class SimpleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleApplication.class, args);
 	}
+	
 }

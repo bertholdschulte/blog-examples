@@ -11,6 +11,7 @@ public class Purchase implements Serializable{
 	private static final long serialVersionUID = -3450493831191972277L;
 	private String id;
 	private String sureName;
+	private boolean isInvoiceRequested;
 
 	public Purchase(){
 		
@@ -30,5 +31,13 @@ public class Purchase implements Serializable{
 
 	public String getSureName() {
 		return sureName;
+	}
+
+	public boolean isInvoiceRequested() {
+		return isInvoiceRequested;
+	}
+
+	public void setInvoiceRequested(boolean isInvoiceRequested) {
+		this.isInvoiceRequested = isInvoiceRequested;
 	}
 }

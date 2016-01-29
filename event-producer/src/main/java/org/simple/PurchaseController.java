@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
  * <pre>
  * {
  *   "id":"666",
- *   "sureName":"Kilmister"
+ *   "sureName":"Kilmister",
+ *   "invoiceRequested":"true"
  * }
  * </pre>
  * 
@@ -41,15 +42,13 @@ public class PurchaseController {
 		eventService.fireEvent("purchaseCreated", purchasePayload);
 		return purchase;
 	}
-
 	/*
 	 * some adaption of types, enrichment with further information etc. might lead to the resulting event.
 	 */
 	public class PurchasePayload implements Serializable {
 
 		private Purchase purchase;
-		private String userName;
-
+		
 		public PurchasePayload(Purchase purchase) {
 			this.purchase = purchase;
 		}
@@ -62,6 +61,9 @@ public class PurchaseController {
 			return purchase.getSureName();
 		}
 
-	}
+		public boolean getHasInvoice() {
+			return purchase.isInvoiceRequested();
+		}
 
+	}
 }

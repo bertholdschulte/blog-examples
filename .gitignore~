@@ -5,6 +5,5 @@
 .externalToolBuilders
 .settings
 .classpath
-.DS_Store
 target
 testdata
