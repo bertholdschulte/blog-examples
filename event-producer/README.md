@@ -1,6 +1,6 @@
-Event producer example
+Event producer code-sketch
 --------
-Tiny example how to send events to a message broker in a lightweight way.
+Tiny code-sketch how to send events to a message broker in a lightweight way.
 Based on spring-boot and apache-camel. Additionally I used [camel-spring-boot](http://camel.apache.org/spring-boot.html), which keeps the camel configuration quite simple, almost zero, in this sketch.
  
 
